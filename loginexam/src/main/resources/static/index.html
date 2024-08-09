@@ -56,6 +56,9 @@
       }
     </script>
     <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+      <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src ="https://developers.kakao.com/sdk/js/kakao.js"></script>
   </head>
 
 
@@ -212,10 +215,119 @@
                         </div>
                       </div>
                     </li>
-                    
-                    <li>로그인</li>
-                    
-                    
+                 
+ <li><button type="button" class="badge rounded-pill bg-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  로그인
+</button></li>
+ <li><button type="button" class="badge rounded-pill bg-warning" data-bs-toggle="modal" data-bs-target="#staticsignup">
+  가입
+</button></li>
+<li><button type="button" class="badge rounded-pill bg-danger" data-bs-toggle="modal" data-bs-target="#staticsignout">
+  탈퇴
+</button></li>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+      
+      
+        <div class="text-center mb-7">
+                <h3 class="text-body-highlight">로그인</h3>
+                <p class="text-body-tertiary">당신의 계정으로 로그인 하세요</p>
+              </div>
+              <button class="btn btn-phoenix-secondary w-100 mb-3"><span class="fab fa-google text-danger me-2 fs-9"></span>네이버로 로그인</button>
+              <div id="naver_id_login"></div><a href="javascript:kakaoLogin()"><img src="/images/kakaologin.png"></a>
+              <button class="btn btn-phoenix-secondary w-100"><span class="fab fa-facebook text-primary me-2 fs-9"></span>카카오로 로그인</button>
+              <div class="position-relative">
+                <hr class="bg-body-secondary mt-5 mb-4" />
+                <div class="divider-content-center">또는 이메일로 로그인 하세요</div>
+              </div>
+              <div class="mb-3 text-start">
+                <label class="form-label" for="email">이메일 주소</label>
+                <div class="form-icon-container">
+                  <input class="form-control form-icon-input" id="email" type="email" placeholder="name@example.com" /><span class="fas fa-user text-body fs-9 form-icon"></span>
+                </div>
+              </div>
+              <div class="mb-3 text-start">
+                <label class="form-label" for="password">비밀번호</label>
+                <div class="form-icon-container">
+                  <input class="form-control form-icon-input" id="password" type="password" placeholder="Password" /><span class="fas fa-key text-body fs-9 form-icon"></span>
+                </div>
+              </div>
+              
+              
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-primary">로그인</button>
+      </div>
+    </div>
+  </div>
+</div>
+                  
+                  
+<div class="modal fade" id="staticsignup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+      
+      
+        <div class="text-center mb-7">
+                <h3 class="text-body-highlight">회원가입</h3>
+                <p class="text-body-tertiary">사이트를 이용하시려면 먼저 회원 가입을 진행해 주세요</p>
+              </div>
+              
+              <div class="position-relative">
+                <hr class="bg-body-secondary mt-5 mb-4" />
+              </div>
+              <div class="mb-3 text-start">
+                <label class="form-label" for="email">이메일 주소</label>
+                <div class="form-icon-container">
+                  <input class="form-control form-icon-input" id="email" type="email" placeholder="name@example.com" /><span class="fas fa-user text-body fs-9 form-icon"></span>
+                </div>
+              </div>
+              <div class="mb-3 text-start">
+                <label class="form-label" for="password">비밀번호</label>
+                <div class="form-icon-container">
+                  <input class="form-control form-icon-input" id="password" type="password" placeholder="Password" /><span class="fas fa-key text-body fs-9 form-icon"></span>
+                </div>
+              </div>
+              
+              
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-warning">회원가입</button>
+      </div>
+    </div>
+  </div>
+</div>                  
+ 
+ 
+ <div class="modal fade" id="staticsignout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">    
+      <div class="modal-body">            
+        <div class="text-center mb-7">
+                <h3 class="text-body-highlight">회원 탈퇴</h3>
+                <p class="text-body-tertiary">한 번 탈퇴하면 되돌릴 수 없습니다.</p>
+              </div>
+              
+              <div class="position-relative">
+                <hr class="bg-body-secondary mt-5 mb-4" />
+              </div>
+      </div> 
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-danger">탈퇴</button>
+      </div>
+      </div>
+    </div>
+  </div>                                    
                     <li class="nav-item dropdown"><a class="nav-link px-2" id="navbarDropdownUser" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false"><span class="text-body-tertiary" data-feather="user" style="height:20px;width:20px;"></span></a>
                       <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border mt-2" aria-labelledby="navbarDropdownUser">
                         <div class="card position-relative border-0">
@@ -1203,7 +1315,31 @@
     <script src="/vendors/dayjs/dayjs.min.js"></script>
     <script src="/assets/js/phoenix.js"></script>
     <script src="/vendors/swiper/swiper-bundle.min.js"></script>
-
+<script type="text/javascript">
+  	var naver_id_login = new naver_id_login("5yP_2jrKcfGUP_jNo16f", "http://localhost:8080/naverlogin");
+  	var state = naver_id_login.getUniqState();
+  	naver_id_login.setButton("green", 3,40);
+  	naver_id_login.setDomain("http://localhost:8080/");
+  	naver_id_login.setState(state);
+  	naver_id_login.setPopup();
+  	naver_id_login.init_naver_id_login();
+  </script>
+  <script>
+  	Kakao.init("492fc25bd9af45add78e42ccb66ea905"); 
+  	
+  	function kakaoLogin() {
+  		window.Kakao.Auth.login({ 
+  		// 개발자 사이트에서 체크한 항목들과 반드시 일치해야 한다. 
+  		scope:'account_email',
+  		success: function (authObj) {window.Kakao.API.request({url:'/v2/user/me', 
+  			success:res => {const kakaoAccount = res.kakao_account; 
+  			location.href='/logincheck?email=' + kakaoAccount.email;}
+  			});
+  			} 
+  		}); 
+  		}
+  	
+	</script>
   </body>
 
 </html>
