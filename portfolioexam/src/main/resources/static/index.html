@@ -34,47 +34,51 @@
                             <li class="nav-item"><a class="nav-link" href="board.html">게시판</a></li>
                             
                             <li class="nav-item">
-							<button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+							<button type="btn btn-secondary" class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   								로그인
 							</button>
 							</li>
 							<!-- Modal -->
 							<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-							  <div class="modal-dialog">
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <h1 class="modal-title fs-5" id="staticBackdropLabel">로그인</h1>
-							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							      </div>
-							      <div class="modal-body">
-							        <div class="mb-3 text-start">
-							              <label class="form-label" for="email">아이디를 입력하세요</label>
-							              <div class="form-icon-container">
-							                <input class="form-control form-icon-input" id="email" type="email" placeholder="name@example.com" /><span class="fas fa-user text-body fs-9 form-icon"></span>
-							              </div>
-							            </div>
-							            <div class="mb-3 text-start">
-							              <label class="form-label" for="password">패스워드를 입력하세요</label>
-							              <div class="form-icon-container">
-							                <input class="form-control form-icon-input" id="password" type="password" placeholder="Password" /><span class="fas fa-key text-body fs-9 form-icon"></span>
-							              </div>
-							            </div>
-							            <div class="row flex-between-center mb-7">
-							              <div class="col-auto">
-							                <div class="form-check mb-0">
-							                </div>
-							              </div>
-							            </div>
-							            <button class="btn btn-primary w-100 mb-3">로그인</button>
-							          
-							      </div>
-							      <div class="modal-footer">
-							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-							        <button type="button" class="btn btn-primary">회원가입</button>
-							      </div>
-							    </div>
-							  </div>
-							</div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+      
+      
+        <div class="text-center mb-7">
+                <h3 class="text-body-highlight">로그인</h3>
+                <p class="text-body-tertiary">당신의 계정으로 로그인 하세요</p>
+              </div>
+              <button class="btn btn-phoenix-secondary w-100 mb-3"><span class="fab fa-google text-danger me-2 fs-9"></span>네이버로 로그인</button>
+              <div id="naver_id_login"></div><a href="javascript:kakaoLogin()"><img src="/images/kakaologin.png"></a>
+              <button class="btn btn-phoenix-secondary w-100"><span class="fab fa-facebook text-primary me-2 fs-9"></span>카카오로 로그인</button>
+              <div class="position-relative">
+                <hr class="bg-body-secondary mt-5 mb-4" />
+                <div class="divider-content-center">또는 이메일로 로그인 하세요</div>
+              </div>
+              <div class="mb-3 text-start">
+                <label class="form-label" for="email">이메일 주소</label>
+                <div class="form-icon-container">
+                  <input class="form-control form-icon-input" id="email" type="email" placeholder="name@example.com" /><span class="fas fa-user text-body fs-9 form-icon"></span>
+                </div>
+              </div>
+              <div class="mb-3 text-start">
+                <label class="form-label" for="password">비밀번호</label>
+                <div class="form-icon-container">
+                  <input class="form-control form-icon-input" id="password" type="password" placeholder="Password" /><span class="fas fa-key text-body fs-9 form-icon"></span>
+                </div>
+              </div>
+              
+              
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-primary">로그인</button>
+      </div>
+    </div>
+  </div>
+</div>
                             
                             
                         </ul>
